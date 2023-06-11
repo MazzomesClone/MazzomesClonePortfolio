@@ -3,6 +3,7 @@ import stars from './assets/stars.svg'
 import turnupPic from './assets/turnup.png'
 import gigsharePic from './assets/gigshare.png'
 import babybutterflycartelPic from './assets/babybutterflycartel.png'
+import acePic from './assets/ace.png'
 
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax'
 
@@ -25,7 +26,7 @@ import SiteLinkButton from './components/SiteLinkButton'
 
 import { useRef } from 'react'
 
-const projects = [
+const projects: Project[] = [
   {
     name: 'TurnUp',
     description: "Venue & event management. Create an account, own venues and create events! Save your favorites to keep up to date.",
@@ -46,6 +47,13 @@ const projects = [
     image: babybutterflycartelPic,
     link: 'https://baby-butterfly-cartel-site-v01.vercel.app/',
     tech: ['ReactJS', 'Wagmi + Rainbowkit', 'CSS', 'Solidity']
+  },
+  {
+    name: 'ACE Tutoring',
+    description: 'Site for Achieve Centers for Education. Find information about tuition and login/enrol to the student portal.',
+    image: acePic,
+    link: 'http://www.acetutoring.co.nz/',
+    tech: ['HTML', 'CSS', 'PHP', 'Wordpress', 'Bootstrap']
   },
   {
     name: 'SwoleSearch',
