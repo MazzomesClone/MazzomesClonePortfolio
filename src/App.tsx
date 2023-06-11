@@ -82,13 +82,6 @@ function NamePage({ page }: { page: React.MutableRefObject<IParallax> }) {
           position: 'relative'
         }}>
 
-          <ButtonBase sx={{ bottom: '0px', position: 'absolute' }} onClick={() => page.current.scrollTo(1)}>
-            <Stack alignItems='center'>
-              <Typography>Click to browse</Typography>
-              <KeyboardArrowDownIcon sx={{ fontSize: '40px' }} />
-            </Stack>
-          </ButtonBase>
-
           <Stack spacing={8}>
 
             <Box>
@@ -111,6 +104,29 @@ function NamePage({ page }: { page: React.MutableRefObject<IParallax> }) {
             </Typography>
 
           </Stack>
+
+          <ButtonBase
+            sx={{
+              bottom: '0px',
+              position: 'absolute',
+              transition: 'color 0.3s',
+              '.browse-text': {
+                transition: 'transform 0.3s'
+              },
+              ":hover": {
+                color: 'white',
+                '.browse-text': {
+                  transition: 'transform 0.3s',
+                  transform: 'translateY(-7px)'
+                }
+              }
+            }}
+            onClick={() => page.current.scrollTo(1)}>
+            <Stack alignItems='center'>
+              <Typography className='browse-text'>Click to browse</Typography>
+              <KeyboardArrowDownIcon sx={{ fontSize: '40px' }} />
+            </Stack>
+          </ButtonBase>
 
         </Box>
       </Container>
@@ -143,7 +159,8 @@ function ProjectPage({ project, index, page }: ProjectPage) {
               <Box>
                 <a href={project.link} target='blank' rel='noreferrer'>
                   <SiteLinkButton>
-                    <OpenInNewIcon sx={{ mr: 1 }} />Visit
+                    <OpenInNewIcon sx={{ mr: 1 }} />
+                    Visit
                   </SiteLinkButton>
                 </a>
               </Box>
@@ -188,11 +205,14 @@ function App() {
   const totalPages = ProjectPages.length + 1
 
   return (
-    <Parallax ref={page} pages={totalPages} onWheel={(e: React.WheelEvent<HTMLDivElement>) => e.preventDefault()}>
+    <Parallax ref={page} pages={totalPages}>
       <ParallaxLayer
-        style={{ backgroundImage: `url(${stars})`, backgroundSize: 'cover', backgroundRepeat: 'repeat' }}
-        factor={totalPages}
-      />
+        style={{
+          backgroundImage: `url(${stars})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'repeat'
+        }}
+        factor={totalPages} />
 
       <NamePage page={page} />
 

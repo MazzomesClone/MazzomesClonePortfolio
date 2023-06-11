@@ -4,16 +4,14 @@ import { styled } from "@mui/material/styles";
 const SiteLinkButton = styled(ButtonBase)(() => ({
     width: '120px',
     height: '52px',
-    background: '#81d7fc',
     border: '#81d7fc 2px solid',
     borderRadius: '7px',
-    color: 'black',
+    color: '#81d7fc',
     fontSize: '1.2rem',
     fontWeight: '500',
-    transition: 'background 0.3s, color 0.3s',
+    transition: 'box-shadow 0.3s',
     ":hover": {
-        background: 'rgba(0, 0, 0, 0)',
-        color: 'rgb(233, 233, 233)'
+        "boxShadow": '0 0 7px 1px #81d7fc'
     }
 }))
 

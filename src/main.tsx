@@ -6,6 +6,7 @@ import { ThemeProvider } from '@emotion/react'
 import './index.css'
 
 const theme = createTheme({
+  palette: { mode: 'dark' },
   typography: { fontFamily: ['Outfit', 'sans-serif'].join(',') },
 })
 
