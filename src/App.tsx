@@ -35,11 +35,11 @@ const projects: Project[] = [
     tech: ['ReactJS', 'MUI', 'ExpressJS', 'MongoDB', 'AWS Elastic Beanstalk']
   },
   {
-    name: 'GigShare',
-    description: 'Share your experiences at events. Add artists, friends and songs to your posts!',
-    image: gigsharePic,
-    link: 'https://mini-project-1-gig-share-social-app.vercel.app/',
-    tech: ['HTML', 'JS', 'CSS', 'Bootstrap']
+    name: 'ACE Tutoring',
+    description: 'Site for Achieve Centers for Education. Find information about tuition and login/enrol to the student portal.',
+    image: acePic,
+    link: 'http://www.acetutoring.co.nz/',
+    tech: ['HTML', 'CSS', 'PHP', 'Wordpress', 'Bootstrap']
   },
   {
     name: 'Butterfly NFT',
@@ -49,11 +49,11 @@ const projects: Project[] = [
     tech: ['ReactJS', 'Wagmi + Rainbowkit', 'CSS', 'Solidity']
   },
   {
-    name: 'ACE Tutoring',
-    description: 'Site for Achieve Centers for Education. Find information about tuition and login/enrol to the student portal.',
-    image: acePic,
-    link: 'http://www.acetutoring.co.nz/',
-    tech: ['HTML', 'CSS', 'PHP', 'Wordpress', 'Bootstrap']
+    name: 'GigShare',
+    description: 'Share your experiences at events. Add artists, friends and songs to your posts!',
+    image: gigsharePic,
+    link: 'https://mini-project-1-gig-share-social-app.vercel.app/',
+    tech: ['HTML', 'JS', 'CSS', 'Bootstrap']
   },
   {
     name: 'SwoleSearch',
@@ -165,12 +165,12 @@ function ProjectPage({ project, index, page }: ProjectPage) {
                 {project.name}
               </Typography>
               <Box>
-                <a href={project.link} target='blank' rel='noreferrer'>
+                <UnstyledLink href={project.link}>
                   <SiteLinkButton>
                     <OpenInNewIcon sx={{ mr: 1 }} />
                     Visit
                   </SiteLinkButton>
-                </a>
+                </UnstyledLink>
               </Box>
             </Box>
             <Grid container spacing={3}>
